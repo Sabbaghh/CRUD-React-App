@@ -17,7 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy" : "yarn bulid",
-    "deploy" : "gh-pages -d - bulid"
+    "deploy" : "gh-pages -d bulid"
   },
   "eslintConfig": {
     "extends": "react-app"
