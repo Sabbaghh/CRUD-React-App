@@ -1,13 +1,298 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding:0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Titillium Web', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
+  background-color: #081c15;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#root { 
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.App{ 
+  width : 65%;
+  height: fit-content;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  border-top-right-radius: 2rem;
+  border-top-left-radius :2rem;
+}
+
+.App h2 {
+  color: #3ddb92 ;
+  height: 20vh;
+  font-weight: bolder;
+  font-size: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* courseForm */
+.CourseForm{ 
+  width: 100%;
+  height: 6vh;
+  display: flex;
+  flex-direction: row;
+  z-index: 2;
+  margin-top: 0.04rem;
+  background-color: 	rgb(63, 229, 153);
+  
+}
+.CourseForm input{ 
+  width: 80%;
+  height: 100%;
+  background:	rgb(63, 229, 153);
+  outline: none;
+  font-size : 1.5rem;
+  text-align: start;
+  padding: 1%;
+  border:none;
+  color: 	#FFF;
+}
+
+.CourseForm input::placeholder{ 
+  color:		rgba(233, 233, 235,80%);
+  font-style: italic;
+  text-transform: lowercase;
+}
+.CourseForm button{ 
+  width:20%;
+  height: 100%;
+  outline: none;
+  border: none;
+  background:rgb(63, 229, 153);
+  color: #FFF;
+  font-size: 22px;
+  transition: color .5s linear;
+}
+.CourseForm button:hover{ 
+  color: #e76f51;
+}
+
+.CourseForm button span{ 
+  position: relative;
+  left: 0%;
+  animation: mymove 2s infinite linear ;
+}
+@keyframes mymove {
+  0%   {left: 0%;}
+  50%  {left: 5%;}
+  75%  {left:10%;}
+  100% {left:15%}
+}
+
+/* ItemList */
+.ItemList{ 
+  width: 100%;
+  height: fit-content;
+  position: relative;
+}
+
+.ItemList div{ 
+  display: inline-block;
+  width: 70%;
+  text-align: start;
+  font-size: 1.5rem;
+  padding: 1%;
+  color: black;
+  font-family: monospace;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.ItemList ul{ 
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.ItemList ul li { 
+  height: 12vh;
+  border-top: 0.5px solid	#aeb4b9;
+}
+
+
+.ItemList button{ 
+  outline: none;
+  border: None;
+  width: 10%;
+  height: 100%;
+  font-size: 1.2rem;
+  color:				rgb(202, 209, 210) ;
+  background-color: #FFF;
+  border-left:0.1px solid #aeb4b9;
+  cursor: pointer;
+  transition: all .3s linear;
+}
+
+.ItemList ul li .check { 
+  border-left:none;
+  border-right:0.1px solid #aeb4b9;
+}
+
+.ItemList button:hover{ 
+  color: #3ddb92;
+}
+
+.ItemList .check:target{ 
+  background-color: #3ddb92;
+}
+
+/* ItemList  form */
+
+.ItemList form{ 
+  width: 100%;
+  height: 11vh;
+  box-shadow: 2px 2px 5px grey;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+
+}
+.ItemList form input{ 
+  width: 90%;
+  height: 100%;
+  text-align: start;
+  font-size: 1.5rem;
+  padding: 1%;
+  color: black;
+  font-family: monospace;
+  font-size: 2rem;
+  outline: none;
+  border:.1px solid rgb(63, 229, 153);
+}
+.ItemList form button{ 
+  width: 10%;
+  height: 110%;
+  border:.1px solid rgb(63, 229, 153);
+}
+
+/* active classes  */
+
+.ItemList ul li .check.active { 
+  color: #e63946;
+  animation: activeMove 0.2s 1 linear;
+}
+.ItemList ul li .active{ 
+  color:rgb(202, 209, 210);
+  animation: activeMove 0.2s 1 linear;
+}
+@keyframes activeMove {
+  0%   {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+/* medias */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #root{ 
+    display: inline-block;
+  }
+  .App h2 {
+    color: #3ddb92 ;
+    height: 12vh;
+    font-weight: bolder;
+    font-size: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .App{ 
+    width: 95%;
+    margin : 3vh auto;
+  }
+  .CourseForm input{ 
+    width: 80%;
+    background:	rgb(63, 229, 153);
+    font-size : 1.3rem;
+  }
+  
+  .CourseForm input::placeholder{ 
+    font-style: italic;
+    text-transform: lowercase;
+  }
+  .ItemList div{ 
+    width: 25%;
+    font-size: 1.3rem;
+  }
+  .ItemList button{ 
+    width: 25%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all .3s linear;
+  }
+  .ItemList button:hover{ 
+    color: rgb(202, 209, 210);
+  }
+  .CourseForm button:hover{ 
+    color:rgb(202, 209, 210);
+  }
+  
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 900px) {
+
+  #root{ 
+    display: inline-block;
+  }
+  .App h2 {
+    color: #3ddb92 ;
+    height: 12vh;
+    font-weight: bolder;
+    font-size: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .App{ 
+    width: 95%;
+    margin : 3vh auto;
+  }
+  .ItemList div{ 
+    width: 40%;
+    font-size: 1.3rem;
+  }
+  .ItemList button{ 
+    width: 20%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all .3s linear;
+  }
+  .ItemList button:hover{ 
+    color: rgb(202, 209, 210);
+  }
+  .CourseForm button:hover{ 
+    color:rgb(202, 209, 210);
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+
