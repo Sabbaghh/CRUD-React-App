@@ -21,10 +21,20 @@ class ItemList extends Component {
         return (
             <Fragment>
                 <li>
-                        <button className={activeClassAndCheck} onClick={()=>this.props.shiftItems(this.props.ElmIndex)} > <span><i className="fas fa-check"></i></span> </button>
+                        <button className={activeClassAndCheck}
+                        onClick={()=>this.props.shiftItems(this.props.ElmIndex)} >
+                            <span><i className="fas fa-check"></i></span>
+                        </button>
+
                         <div className ={activeClass}><span>{this.props.Course}</span></div>
-                        <button onClick={this.Toggle} className="Edit"> <span>Edit</span> </button>
-                        <button onClick={() => this.props.Delete(this.props.ElmIndex)}> <span><i className="fas fa-trash"></i></span></button>
+                        <button onClick={this.Toggle} className="Edit">
+                            <span>Edit</span>
+
+                        </button>
+                        <button
+                         onClick={() => this.props.Delete(this.props.ElmIndex)}>
+                             <span><i className="fas fa-trash"></i></span>
+                        </button>
                 </li>
             </Fragment>
         )
